@@ -72,8 +72,13 @@ public class ArithmeticCalculatorServlet extends HttpServlet {
                request.setAttribute("result",calc);
            }
             else if(request.getParameter("%") != null){
+                if(second == 0){
+                     request.setAttribute("result","invalid");
+                }
+                else{
                calc = first % second;
                request.setAttribute("result",calc);
+                }
            }
            
        }
